@@ -1,11 +1,8 @@
 // complete the given function
 
 function palindrome(str){
-	let rev = str.split("").reverse().join("")
-	if(rev === str){
-		return true
-	}else{
-		return false
-	}
+	let cleanStr = str.replace(/[^a-zA-Z0-9]/g,"").toLowerCase()
+	let revStr = cleanStr.split("").reverse().join("")
+	return cleanStr === revStr
 }
 module.exports = palindrome
